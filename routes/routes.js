@@ -8,7 +8,6 @@ module.exports = router;
 //Post Method
 router.post('/post', async (req, res) => {
   const data = new Model({
-    id: req.body.id,
     name: req.body.name,
     description: req.body.description,
     location: req.body.location,
@@ -37,8 +36,10 @@ router.get('/getConferences', async (req, res) => {
 
 //Get by ID Method
 router.get('/getConference/:id', async (req, res) => {
+  console.log(req.params)
   try{
     const data = await Model.findById(req.params.id);
+    console.log(data)
     res.json(data)
   }
   catch(error){
