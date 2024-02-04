@@ -5,7 +5,7 @@ const router = express.Router()
 
 module.exports = router;
 
-//Post Method
+//Post Method TODO
 router.post('/post', async (req, res) => {
   const data = new Model({
     name: req.body.name,
